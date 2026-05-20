@@ -1,10 +1,6 @@
 # ***⚔️ El Camino del Guerrero Digital***
 
 <p align="center">
-  <img src="assets/logo.png" width="350px" />
-</p>
-
-<p align="center">
   <img src="https://img.shields.io/badge/Nivel-Zero_a_Operador-red?style=for-the-badge" />
   <img src="https://img.shields.io/badge/Enfoque-Ciberseguridad-black?style=for-the-badge" />
   <img src="https://img.shields.io/badge/Idioma-Español-orange?style=for-the-badge" />
@@ -40,14 +36,12 @@
         <li><a href="#fase4">Fase 4 — PHP</a></li>
         <li><a href="#fase5">Fase 5 — JavaScript + PHP</a></li>
         <li><a href="#fase6">Fase 6 — Node.js</a></li>
-        <li><a href="#fase7">Fase 7 — Docker</a></li>
-        <li><a href="#fase8">Fase 8 — Kotlin + Android</a></li>
-        <li><a href="#fase9">Fase 9 — C/C++</a></li>
-        <li><a href="#fase10">Fase 10 — CTFs</a></li>
+        <li><a href="#fase7">Fase 7 — Kotlin + Android</a></li>
+        <li><a href="#fase8">Fase 8 — C/C++</a></li>
+        <li><a href="#fase9">Fase 9 — CTFs</a></li>
       </ul>
     </details>
   </li>
-  <li><a href="#recursos">Recursos Recomendados</a></li>
   <li><a href="#informe">Plantilla de Informe de Operaciones</a></li>
   <li><a href="#contacto">Contacto</a></li>
 </ul>
@@ -88,23 +82,7 @@ Antes de empezar, configura tu entorno de trabajo.
 - **[ChatGPT](https://chatgpt.com)** — dudas rápidas, conceptos generales
 - **[GitHub Copilot](https://github.com/features/copilot)** — autocompletado de código dentro del editor
 
-**Documentación continua:**
-
-No documentes cuando acabes. Documenta mientras trabajas.
-
-Cada vez que ejecutas un comando, cada vez que algo falla, cada vez que entiendes por qué funciona algo — lo apuntas. Ese proceso es tu informe de operaciones real. Lo que escribes al final sin notas es una reconstrucción. Lo que escribes mientras trabajas es la verdad.
-
-**Herramientas recomendadas para tomar notas en Markdown:**
-
-| Herramienta | Descripción |
-|---|---|
-| [Obsidian](https://obsidian.md) | La más potente — notas enlazadas, grafos de conocimiento, plugins, todo local |
-| [Joplin](https://joplinapp.org) | Open source, sincronización con la nube, buena para empezar |
-| [VS Code](https://code.visualstudio.com) | Preview de Markdown integrado — si ya lo tienes abierto para el código, úsalo también para las notas |
-
-> El flujo es simple: tienes Obsidian o Joplin abierto al lado del editor mientras trabajas. Cada paso que das, cada error que encuentras, cada solución que descubres — lo escribes en ese momento. Cuando acabas la práctica, el informe ya está casi hecho.
-
-
+**Editores por fase:**
 
 | Editor | Uso |
 |---|---|
@@ -137,12 +115,7 @@ Cada vez que ejecutas un comando, cada vez que algo falla, cada vez que entiende
 - Montar una máquina virtual con Kali Linux o Ubuntu
 - Recomendado cuando el equipo tiene recursos suficientes
 
-**Práctica:**
-1. Crear una máquina virtual desde cero — configurar RAM, disco, red
-2. Instalar el sistema operativo
-3. Clonar la máquina virtual — aprenden por qué los snapshots y clones son esenciales: antes de tocar algo crítico, clonas. Si la rompes, restauras en segundos.
-
-**Proyecto:** Máquina virtual funcional con Ubuntu/Kali lista para trabajar + su clon de seguridad.
+**Proyecto:** Máquina virtual funcional con Ubuntu/Kali lista para trabajar.
 
 ---
 
@@ -160,15 +133,7 @@ Cada vez que ejecutas un comando, cada vez que algo falla, cada vez que entiende
 - Pipes y redirección — `|`, `>`, `>>`, `grep`, `awk`, `sed`
 - Gestión de paquetes — `apt`, `dpkg`
 
-**Scripts propuestos:**
-
-| Script | Descripción |
-|---|---|
-| `sysinfo.sh` | Recoge información del sistema — OS, CPU, RAM, disco, interfaces de red y servicios activos. El primer script de reconocimiento de un operador. |
-| `ping_sweep.sh` | Escanea un rango de IPs en la red local con `ping` para detectar hosts activos. Introducción al reconocimiento de red sin herramientas externas. |
-| `log_analyzer.sh` | Lee `/var/log/auth.log` y extrae intentos de login fallidos, IPs repetidas y usuarios inexistentes. Primer contacto con análisis de logs reales. |
-
-**Entrega:** Ver sección de [Formatos de Entrega](#entrega).
+**Proyecto:** Scripts `.sh` básicos — automatización de tareas del sistema operativo.
 
 ---
 
@@ -263,24 +228,7 @@ Cada vez que ejecutas un comando, cada vez que algo falla, cada vez que entiende
 
 <div id="fase7"/>
 
-## ***🐳 Fase 7 — Docker***
-
-**Por qué importa:** Docker es el estándar de la industria para desplegar aplicaciones. En ciberseguridad lo encontrarás en laboratorios, en infraestructura de CTFs, en entornos de análisis de malware y en cualquier empresa. Entender contenedores es entender cómo se aíslan procesos, redes y sistemas de ficheros — conceptos directamente aplicables a seguridad.
-
-**Contenido:**
-- Diferencia entre imagen y contenedor
-- `Dockerfile` — construir tu propia imagen
-- `docker-compose` — orquestar múltiples contenedores
-- Redes en Docker — cómo se comunican los contenedores entre sí
-- Volúmenes — persistencia de datos
-
-**Proyecto:** Dockerizar el servidor FastAPI + Ollama construido en la Fase 2. Lo que antes requería configuración manual ahora arranca con un `docker-compose up`. Entienden por qué eso cambia todo.
-
----
-
-<div id="fase8"/>
-
-## ***📱 Fase 8 — Kotlin + Android***
+## ***📱 Fase 7 — Kotlin + Android***
 
 **Por qué importa:** El desarrollo móvil es un paradigma completamente distinto — ciclo de vida de Activities, permisos del sistema operativo, base de datos local. Entender cómo funciona una app móvil es entender cómo se atacan. Kotlin es además el puente natural hacia Java, presente en gran parte de la infraestructura empresarial.
 
@@ -294,9 +242,9 @@ Cada vez que ejecutas un comando, cada vez que algo falla, cada vez que entiende
 
 ---
 
-<div id="fase9"/>
+<div id="fase8"/>
 
-## ***⚙️ Fase 9 — C/C++***
+## ***⚙️ Fase 8 — C/C++***
 
 **Por qué importa:** C y C++ son los lenguajes del sistema operativo, los drivers, el firmware y la mayoría de vulnerabilidades críticas. Entender la gestión manual de memoria es entender por qué existen los buffer overflows, los use-after-free y los exploits de bajo nivel.
 
@@ -313,9 +261,9 @@ Cada vez que ejecutas un comando, cada vez que algo falla, cada vez que entiende
 
 ---
 
-<div id="fase10"/>
+<div id="fase9"/>
 
-## ***🚩 Fase 10 — CTFs***
+## ***🚩 Fase 9 — CTFs***
 
 **Por qué importa:** Los CTFs son el campo de entrenamiento. Todo lo que aprendiste en las fases anteriores se aplica aquí en escenarios reales y controlados. Es el ejercicio táctico final.
 
@@ -326,19 +274,6 @@ Cada vez que ejecutas un comando, cada vez que algo falla, cada vez que entiende
 2. Jr Penetration Tester
 
 **Documentación:** Cada máquina resuelta lleva su writeup — metodología, herramientas usadas, vulnerabilidad explotada, lecciones aprendidas. No vale con resolver. Hay que documentar.
-
----
-
-<div id="recursos"/>
-
-## ***📚 Recursos Recomendados***
-
-Materiales de referencia para complementar cada fase del camino. Gratuitos o con versión gratuita suficiente para empezar.
-
-- **[MoureDev — Cursos](https://moure.dev/cursos)** — Brais Moure. Cursos de programación en español de altísima calidad. Python, Kotlin, Git y más. El referente en castellano.
-- **[W3Schools](https://www.w3schools.com)** — Referencia rápida para HTML, CSS, JavaScript, PHP, Python y SQL. Ideal para consultar sintaxis mientras programas.
-- **[Harvard CS50P — Introduction to Programming with Python](https://pll.harvard.edu/course/cs50s-introduction-programming-python)** — El curso introductorio de Python de Harvard. Gratuito, riguroso y con certificado. Complemento perfecto para la Fase 2.
-- **[Luis Llamas — Cursos](https://www.luisllamas.es/cursos/)** — Electrónica, programación, IoT y automatización. Muy útil para entender cómo el software interactúa con el hardware.
 
 ---
 
@@ -365,29 +300,6 @@ Cada práctica completada se documenta con esta estructura:
 
 ### Referencias utilizadas
 ```
-
----
-
-<div id="entrega"/>
-
-## ***📦 Formatos de Entrega***
-
-Cada fase puede entregarse en cualquiera de estos formatos — lo importante es que esté documentado y sea tuyo:
-
-**Opción A — Repositorio GitHub** *(recomendado)*
-- Un repo por fase con el código, el `README.md` de la práctica y el informe de operaciones
-- El historial de commits habla de cómo trabajaste, no solo del resultado final
-
-**Opción B — Documento Markdown**
-- Un fichero `.md` con la documentación completa de la fase
-- Puede vivir dentro del mismo repositorio GitHub como `INFORME.md`
-
-**Opción C — PDF en LaTeX**
-- Documento formal con portada, desarrollo técnico y conclusiones
-- Con anexo al repositorio GitHub donde está el proyecto
-- Recomendado si quieres algo que puedas presentar o imprimir
-
-> Independientemente del formato elegido, el proyecto de código siempre va en GitHub. El documento es el informe — el repo es la evidencia.
 
 ---
 
