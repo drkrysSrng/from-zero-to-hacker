@@ -40,9 +40,10 @@
         <li><a href="#fase4">Fase 4 — PHP</a></li>
         <li><a href="#fase5">Fase 5 — JavaScript + PHP</a></li>
         <li><a href="#fase6">Fase 6 — Node.js</a></li>
-        <li><a href="#fase7">Fase 7 — Kotlin + Android</a></li>
-        <li><a href="#fase8">Fase 8 — C/C++</a></li>
-        <li><a href="#fase9">Fase 9 — CTFs</a></li>
+        <li><a href="#fase7">Fase 7 — Docker</a></li>
+        <li><a href="#fase8">Fase 8 — Kotlin + Android</a></li>
+        <li><a href="#fase9">Fase 9 — C/C++</a></li>
+        <li><a href="#fase10">Fase 10 — CTFs</a></li>
       </ul>
     </details>
   </li>
@@ -261,7 +262,24 @@ Cada vez que ejecutas un comando, cada vez que algo falla, cada vez que entiende
 
 <div id="fase7"/>
 
-## ***📱 Fase 7 — Kotlin + Android***
+## ***🐳 Fase 7 — Docker***
+
+**Por qué importa:** Docker es el estándar de la industria para desplegar aplicaciones. En ciberseguridad lo encontrarás en laboratorios, en infraestructura de CTFs, en entornos de análisis de malware y en cualquier empresa. Entender contenedores es entender cómo se aíslan procesos, redes y sistemas de ficheros — conceptos directamente aplicables a seguridad.
+
+**Contenido:**
+- Diferencia entre imagen y contenedor
+- `Dockerfile` — construir tu propia imagen
+- `docker-compose` — orquestar múltiples contenedores
+- Redes en Docker — cómo se comunican los contenedores entre sí
+- Volúmenes — persistencia de datos
+
+**Proyecto:** Dockerizar el servidor FastAPI + Ollama construido en la Fase 2. Lo que antes requería configuración manual ahora arranca con un `docker-compose up`. Entienden por qué eso cambia todo.
+
+---
+
+<div id="fase8"/>
+
+## ***📱 Fase 8 — Kotlin + Android***
 
 **Por qué importa:** El desarrollo móvil es un paradigma completamente distinto — ciclo de vida de Activities, permisos del sistema operativo, base de datos local. Entender cómo funciona una app móvil es entender cómo se atacan. Kotlin es además el puente natural hacia Java, presente en gran parte de la infraestructura empresarial.
 
@@ -275,9 +293,9 @@ Cada vez que ejecutas un comando, cada vez que algo falla, cada vez que entiende
 
 ---
 
-<div id="fase8"/>
+<div id="fase9"/>
 
-## ***⚙️ Fase 8 — C/C++***
+## ***⚙️ Fase 9 — C/C++***
 
 **Por qué importa:** C y C++ son los lenguajes del sistema operativo, los drivers, el firmware y la mayoría de vulnerabilidades críticas. Entender la gestión manual de memoria es entender por qué existen los buffer overflows, los use-after-free y los exploits de bajo nivel.
 
@@ -294,9 +312,9 @@ Cada vez que ejecutas un comando, cada vez que algo falla, cada vez que entiende
 
 ---
 
-<div id="fase9"/>
+<div id="fase10"/>
 
-## ***🚩 Fase 9 — CTFs***
+## ***🚩 Fase 10 — CTFs***
 
 **Por qué importa:** Los CTFs son el campo de entrenamiento. Todo lo que aprendiste en las fases anteriores se aplica aquí en escenarios reales y controlados. Es el ejercicio táctico final.
 
