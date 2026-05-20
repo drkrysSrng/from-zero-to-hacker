@@ -47,6 +47,7 @@
       </ul>
     </details>
   </li>
+  <li><a href="#recursos">Recursos Recomendados</a></li>
   <li><a href="#informe">Plantilla de Informe de Operaciones</a></li>
   <li><a href="#contacto">Contacto</a></li>
 </ul>
@@ -325,6 +326,19 @@ Cada vez que ejecutas un comando, cada vez que algo falla, cada vez que entiende
 2. Jr Penetration Tester
 
 **Documentación:** Cada máquina resuelta lleva su writeup — metodología, herramientas usadas, vulnerabilidad explotada, lecciones aprendidas. No vale con resolver. Hay que documentar.
+
+---
+
+<div id="recursos"/>
+
+## ***📚 Recursos Recomendados***
+
+Materiales de referencia para complementar cada fase del camino. Gratuitos o con versión gratuita suficiente para empezar.
+
+- **[MoureDev — Cursos](https://moure.dev/cursos)** — Brais Moure. Cursos de programación en español de altísima calidad. Python, Kotlin, Git y más. El referente en castellano.
+- **[W3Schools](https://www.w3schools.com)** — Referencia rápida para HTML, CSS, JavaScript, PHP, Python y SQL. Ideal para consultar sintaxis mientras programas.
+- **[Harvard CS50P — Introduction to Programming with Python](https://pll.harvard.edu/course/cs50s-introduction-programming-python)** — El curso introductorio de Python de Harvard. Gratuito, riguroso y con certificado. Complemento perfecto para la Fase 2.
+- **[Luis Llamas — Cursos](https://www.luisllamas.es/cursos/)** — Electrónica, programación, IoT y automatización. Muy útil para entender cómo el software interactúa con el hardware.
 
 ---
 
