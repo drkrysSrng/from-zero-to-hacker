@@ -1,6 +1,10 @@
 # ***⚔️ El Camino del Guerrero Digital***
 
 <p align="center">
+  <img src="assets/logo.png" width="350px" />
+</p>
+
+<p align="center">
   <img src="https://img.shields.io/badge/Nivel-Zero_a_Operador-red?style=for-the-badge" />
   <img src="https://img.shields.io/badge/Enfoque-Ciberseguridad-black?style=for-the-badge" />
   <img src="https://img.shields.io/badge/Idioma-Español-orange?style=for-the-badge" />
@@ -36,12 +40,14 @@
         <li><a href="#fase4">Fase 4 — PHP</a></li>
         <li><a href="#fase5">Fase 5 — JavaScript + PHP</a></li>
         <li><a href="#fase6">Fase 6 — Node.js</a></li>
-        <li><a href="#fase7">Fase 7 — Kotlin + Android</a></li>
-        <li><a href="#fase8">Fase 8 — C/C++</a></li>
-        <li><a href="#fase9">Fase 9 — CTFs</a></li>
+        <li><a href="#fase7">Fase 7 — Docker</a></li>
+        <li><a href="#fase8">Fase 8 — Kotlin + Android</a></li>
+        <li><a href="#fase9">Fase 9 — C/C++</a></li>
+        <li><a href="#fase10">Fase 10 — CTFs</a></li>
       </ul>
     </details>
   </li>
+  <li><a href="#recursos">Recursos Recomendados</a></li>
   <li><a href="#informe">Plantilla de Informe de Operaciones</a></li>
   <li><a href="#contacto">Contacto</a></li>
 </ul>
@@ -82,7 +88,23 @@ Antes de empezar, configura tu entorno de trabajo.
 - **[ChatGPT](https://chatgpt.com)** — dudas rápidas, conceptos generales
 - **[GitHub Copilot](https://github.com/features/copilot)** — autocompletado de código dentro del editor
 
-**Editores por fase:**
+**Documentación continua:**
+
+No documentes cuando acabes. Documenta mientras trabajas.
+
+Cada vez que ejecutas un comando, cada vez que algo falla, cada vez que entiendes por qué funciona algo — lo apuntas. Ese proceso es tu informe de operaciones real. Lo que escribes al final sin notas es una reconstrucción. Lo que escribes mientras trabajas es la verdad.
+
+**Herramientas recomendadas para tomar notas en Markdown:**
+
+| Herramienta | Descripción |
+|---|---|
+| [Obsidian](https://obsidian.md) | La más potente — notas enlazadas, grafos de conocimiento, plugins, todo local |
+| [Joplin](https://joplinapp.org) | Open source, sincronización con la nube, buena para empezar |
+| [VS Code](https://code.visualstudio.com) | Preview de Markdown integrado — si ya lo tienes abierto para el código, úsalo también para las notas |
+
+> El flujo es simple: tienes Obsidian o Joplin abierto al lado del editor mientras trabajas. Cada paso que das, cada error que encuentras, cada solución que descubres — lo escribes en ese momento. Cuando acabas la práctica, el informe ya está casi hecho.
+
+
 
 | Editor | Uso |
 |---|---|
@@ -115,7 +137,12 @@ Antes de empezar, configura tu entorno de trabajo.
 - Montar una máquina virtual con Kali Linux o Ubuntu
 - Recomendado cuando el equipo tiene recursos suficientes
 
-**Proyecto:** Máquina virtual funcional con Ubuntu/Kali lista para trabajar.
+**Práctica:**
+1. Crear una máquina virtual desde cero — configurar RAM, disco, red
+2. Instalar el sistema operativo
+3. Clonar la máquina virtual — aprenden por qué los snapshots y clones son esenciales: antes de tocar algo crítico, clonas. Si la rompes, restauras en segundos.
+
+**Proyecto:** Máquina virtual funcional con Ubuntu/Kali lista para trabajar + su clon de seguridad.
 
 ---
 
@@ -133,7 +160,15 @@ Antes de empezar, configura tu entorno de trabajo.
 - Pipes y redirección — `|`, `>`, `>>`, `grep`, `awk`, `sed`
 - Gestión de paquetes — `apt`, `dpkg`
 
-**Proyecto:** Scripts `.sh` básicos — automatización de tareas del sistema operativo.
+**Scripts propuestos:**
+
+| Script | Descripción |
+|---|---|
+| `sysinfo.sh` | Recoge información del sistema — OS, CPU, RAM, disco, interfaces de red y servicios activos. El primer script de reconocimiento de un operador. |
+| `ping_sweep.sh` | Escanea un rango de IPs en la red local con `ping` para detectar hosts activos. Introducción al reconocimiento de red sin herramientas externas. |
+| `log_analyzer.sh` | Lee `/var/log/auth.log` y extrae intentos de login fallidos, IPs repetidas y usuarios inexistentes. Primer contacto con análisis de logs reales. |
+
+**Entrega:** Ver sección de [Formatos de Entrega](#entrega).
 
 ---
 
@@ -228,42 +263,79 @@ Antes de empezar, configura tu entorno de trabajo.
 
 <div id="fase7"/>
 
-## ***📱 Fase 7 — Kotlin + Android***
+## ***🐳 Fase 7 — Docker***
 
-**Por qué importa:** El desarrollo móvil es un paradigma completamente distinto — ciclo de vida de Activities, permisos del sistema operativo, base de datos local. Entender cómo funciona una app móvil es entender cómo se atacan. Kotlin es además el puente natural hacia Java, presente en gran parte de la infraestructura empresarial.
+**Por qué importa:** Docker es el estándar de la industria para desplegar aplicaciones. En ciberseguridad lo encontrarás en laboratorios, en infraestructura de CTFs, en entornos de análisis de malware y en cualquier empresa. Entender contenedores es entender cómo se aíslan procesos, redes y sistemas de ficheros — conceptos directamente aplicables a seguridad.
 
 **Contenido:**
-- Android Studio, estructura de un proyecto Android
-- Activities, ciclo de vida, layouts XML
-- Base de datos local con Room/SQLite
-- Permisos y gestión de recursos
+- Diferencia entre imagen y contenedor
+- `Dockerfile` — construir tu propia imagen
+- `docker-compose` — orquestar múltiples contenedores
+- Redes en Docker — cómo se comunican los contenedores entre sí
+- Volúmenes — persistencia de datos
 
-**Proyecto:** App Android funcional con base de datos local — algo que el alumno decida que va a usar de verdad.
+**Proyecto:** Dockerizar el servidor FastAPI + Ollama construido en la Fase 2. Lo que antes requería configuración manual ahora arranca con un `docker-compose up`. Entienden por qué eso cambia todo.
 
 ---
 
 <div id="fase8"/>
 
-## ***⚙️ Fase 8 — C/C++***
+## ***📱 Fase 8 — Kotlin + Android***
 
-**Por qué importa:** C y C++ son los lenguajes del sistema operativo, los drivers, el firmware y la mayoría de vulnerabilidades críticas. Entender la gestión manual de memoria es entender por qué existen los buffer overflows, los use-after-free y los exploits de bajo nivel.
+**Por qué importa:** El desarrollo móvil es un paradigma completamente distinto — ciclo de vida de Activities, permisos del sistema operativo, base de datos local. Entender cómo funciona una app Android por dentro es entender cómo funciona el malware móvil por dentro. Si lo has construido, lo reconoces cuando lo analizas.
 
-**Contenido:**
-- Compilación, punteros, gestión manual de memoria
-- Stack y heap — cómo se organizan en memoria
-- Por qué un buffer overflow ocurre y qué consecuencias tiene
+**Práctica 1 — App básica:**
+- Android Studio, estructura de un proyecto Android
+- Activities, ciclo de vida, layouts XML
+- Base de datos local con Room/SQLite
+- Permisos y gestión de recursos
 
-**Referencias:**
-- **[cplusplus.com](https://cplusplus.com)** — referencia completa del lenguaje
-- **[Cisco NetAcad — C++ Advanced](https://www.netacad.com/es/courses/c-plus-plus-advanced?courseLang=en-US)** — curso estructurado
+**Práctica 2 — Servicio en background + alarmas:**
+- Crear un `Service` sin interfaz — una aplicación que corre invisible en segundo plano
+- `AlarmManager` para programar tareas periódicas
+- `BroadcastReceiver` para reaccionar a eventos del sistema
+- Por qué importa: la persistencia y la ejecución silenciosa son los pilares del malware móvil
 
-**Proyecto:** Programa con gestión manual de memoria + demo controlada de buffer overflow para entender el concepto.
+**Práctica 3 — Recolección de datos y envío a servidor:**
+- Recoger información del dispositivo — localización, contactos, logs
+- Enviar los datos a un servidor propio vía HTTP (el servidor PHP o FastAPI que ya construyeron)
+- Por qué importa: cuando analices una app maliciosa haciendo exfiltración de datos, sabrás exactamente qué está ocurriendo y cómo detectarlo
+
+> Estas tres prácticas no enseñan a crear malware. Enseñan a entenderlo. Un analista que ha construido un servicio en background y una rutina de exfiltración reconoce esos patrones en cualquier APK que le pongan delante.
 
 ---
 
 <div id="fase9"/>
 
-## ***🚩 Fase 9 — CTFs***
+## ***⚙️ Fase 9 — C/C++***
+
+**Por qué importa:** C y C++ son los lenguajes del sistema operativo, los drivers, el firmware y la mayoría de vulnerabilidades críticas. Pero en este contexto hay algo igual de importante: la mayoría del malware sofisticado está escrito en C/C++. Si entiendes el lenguaje, entiendes el malware.
+
+**Referencias:**
+- **[cplusplus.com](https://cplusplus.com)** — referencia completa del lenguaje
+- **[Cisco NetAcad — C++ Advanced](https://www.netacad.com/es/courses/c-plus-plus-advanced?courseLang=en-US)** — curso estructurado
+
+**Práctica 1 — Gestión de memoria y buffer overflow:**
+- Compilación, punteros, gestión manual de memoria
+- Stack y heap — cómo se organizan en memoria
+- Demo controlada de buffer overflow — entienden por qué existen los exploits de bajo nivel
+
+**Práctica 2 — Aplicación con interfaz: captura de pantalla:**
+- Aplicación con ventana que captura la pantalla con `GDI+` (`BitBlt`, `GetDC`) y guarda los screenshots en una carpeta
+- Por qué importa: los screenshots **requieren contexto de usuario** — acceso al escritorio, a la sesión activa. No se pueden hacer desde un servicio. Cuando analizan malware que hace screenshots, saben exactamente por qué ese malware necesita ejecutarse en contexto de usuario y no como servicio de sistema.
+
+**Práctica 3 — Servicio de Windows con reverse shell:**
+- Crear un servicio de Windows real — sin interfaz, corriendo en background bajo el sistema
+- El servicio abre una conexión TCP saliente y entrega una shell remota
+- Por qué importa: la reverse shell es el mecanismo de control remoto más común en malware. Haberla construido desde cero significa entender cada byte de lo que ves en un análisis de tráfico o en un desensamblado.
+
+> La combinación de las tres prácticas responde a una pregunta fundamental del análisis de malware: ¿por qué este componente hace esto de esta manera? Si lo has programado, la respuesta es obvia.
+
+---
+
+<div id="fase10"/>
+
+## ***🚩 Fase 10 — CTFs***
 
 **Por qué importa:** Los CTFs son el campo de entrenamiento. Todo lo que aprendiste en las fases anteriores se aplica aquí en escenarios reales y controlados. Es el ejercicio táctico final.
 
@@ -274,6 +346,19 @@ Antes de empezar, configura tu entorno de trabajo.
 2. Jr Penetration Tester
 
 **Documentación:** Cada máquina resuelta lleva su writeup — metodología, herramientas usadas, vulnerabilidad explotada, lecciones aprendidas. No vale con resolver. Hay que documentar.
+
+---
+
+<div id="recursos"/>
+
+## ***📚 Recursos Recomendados***
+
+Materiales de referencia para complementar cada fase del camino. Gratuitos o con versión gratuita suficiente para empezar.
+
+- **[MoureDev — Cursos](https://moure.dev/cursos)** — Brais Moure. Cursos de programación en español de altísima calidad. Python, Kotlin, Git y más. El referente en castellano.
+- **[W3Schools](https://www.w3schools.com)** — Referencia rápida para HTML, CSS, JavaScript, PHP, Python y SQL. Ideal para consultar sintaxis mientras programas.
+- **[Harvard CS50P — Introduction to Programming with Python](https://pll.harvard.edu/course/cs50s-introduction-programming-python)** — El curso introductorio de Python de Harvard. Gratuito, riguroso y con certificado. Complemento perfecto para la Fase 2.
+- **[Luis Llamas — Cursos](https://www.luisllamas.es/cursos/)** — Electrónica, programación, IoT y automatización. Muy útil para entender cómo el software interactúa con el hardware.
 
 ---
 
@@ -300,6 +385,29 @@ Cada práctica completada se documenta con esta estructura:
 
 ### Referencias utilizadas
 ```
+
+---
+
+<div id="entrega"/>
+
+## ***📦 Formatos de Entrega***
+
+Cada fase puede entregarse en cualquiera de estos formatos — lo importante es que esté documentado y sea tuyo:
+
+**Opción A — Repositorio GitHub** *(recomendado)*
+- Un repo por fase con el código, el `README.md` de la práctica y el informe de operaciones
+- El historial de commits habla de cómo trabajaste, no solo del resultado final
+
+**Opción B — Documento Markdown**
+- Un fichero `.md` con la documentación completa de la fase
+- Puede vivir dentro del mismo repositorio GitHub como `INFORME.md`
+
+**Opción C — PDF en LaTeX**
+- Documento formal con portada, desarrollo técnico y conclusiones
+- Con anexo al repositorio GitHub donde está el proyecto
+- Recomendado si quieres algo que puedas presentar o imprimir
+
+> Independientemente del formato elegido, el proyecto de código siempre va en GitHub. El documento es el informe — el repo es la evidencia.
 
 ---
 
