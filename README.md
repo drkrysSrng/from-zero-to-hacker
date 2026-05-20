@@ -315,21 +315,16 @@ Cada vez que ejecutas un comando, cada vez que algo falla, cada vez que entiende
 - **[cplusplus.com](https://cplusplus.com)** — referencia completa del lenguaje
 - **[Cisco NetAcad — C++ Advanced](https://www.netacad.com/es/courses/c-plus-plus-advanced?courseLang=en-US)** — curso estructurado
 
-**Práctica 1 — Gestión de memoria y buffer overflow:**
-- Compilación, punteros, gestión manual de memoria
-- Stack y heap — cómo se organizan en memoria
-- Demo controlada de buffer overflow — entienden por qué existen los exploits de bajo nivel
-
-**Práctica 2 — Aplicación con interfaz: captura de pantalla:**
+**Práctica 1 — Aplicación con interfaz: captura de pantalla:**
 - Aplicación con ventana que captura la pantalla con `GDI+` (`BitBlt`, `GetDC`) y guarda los screenshots en una carpeta
 - Por qué importa: los screenshots **requieren contexto de usuario** — acceso al escritorio, a la sesión activa. No se pueden hacer desde un servicio. Cuando analizan malware que hace screenshots, saben exactamente por qué ese malware necesita ejecutarse en contexto de usuario y no como servicio de sistema.
 
-**Práctica 3 — Servicio de Windows con reverse shell:**
+**Práctica 2 — Servicio de Windows con reverse shell:**
 - Crear un servicio de Windows real — sin interfaz, corriendo en background bajo el sistema
 - El servicio abre una conexión TCP saliente y entrega una shell remota
 - Por qué importa: la reverse shell es el mecanismo de control remoto más común en malware. Haberla construido desde cero significa entender cada byte de lo que ves en un análisis de tráfico o en un desensamblado.
 
-> La combinación de las tres prácticas responde a una pregunta fundamental del análisis de malware: ¿por qué este componente hace esto de esta manera? Si lo has programado, la respuesta es obvia.
+> Quien ha construido estas dos piezas reconoce los patrones en cualquier muestra que analice.
 
 ---
 
@@ -341,9 +336,32 @@ Cada vez que ejecutas un comando, cada vez que algo falla, cada vez que entiende
 
 **Plataforma:** [TryHackMe](https://tryhackme.com)
 
-**Path recomendado:**
-1. Pre-Security
-2. Jr Penetration Tester
+---
+
+**Path 1 — Pre-Security**
+
+Fundamentos técnicos antes de tocar nada ofensivo. Cubre:
+
+- **Redes** — modelo OSI, TCP/IP, DNS, HTTP, cómo viaja un paquete de A a B. Complemento directo a lo visto con Wireshark
+- **Sistemas operativos** — Linux y Windows desde el punto de vista de la seguridad, permisos, procesos, ficheros de sistema
+- **Fundamentos web** — cómo funciona una petición HTTP, cookies, sesiones, cabeceras. Conecta con las prácticas de PHP y JavaScript
+
+---
+
+**Path 2 — Jr Penetration Tester**
+
+El núcleo del camino. Cubre en orden:
+
+- **OSINT** — recopilación de información en fuentes abiertas, Google Dorks, Shodan, Maltego. Conecta directamente con la Fase 3
+- **Redes con Wireshark** — captura y análisis de tráfico, filtros, identificación de protocolos, extracción de credenciales en claro y ficheros de capturas `.pcap`
+- **Hashes y CyberChef** — identificación de tipos de hash, operaciones de encoding/decoding, análisis forense básico de datos. CyberChef como navaja suiza del analista
+- **Esteganografía** — datos ocultos en imágenes y ficheros de audio, herramientas como `steghide`, `exiftool`, `binwalk`. Muy presente en CTFs
+- **Ataques al prompt de IA** — prompt injection, jailbreaking, manipulación de modelos de lenguaje como vector de ataque emergente
+- **Explotación web** — SQLi, XSS, IDOR, file upload bypass, LFI/RFI
+- **Privilege escalation** — Linux y Windows, SUID, servicios mal configurados, tokens de acceso
+- **Metasploit** — framework de explotación, módulos, payloads, sessions
+
+---
 
 **Documentación:** Cada máquina resuelta lleva su writeup — metodología, herramientas usadas, vulnerabilidad explotada, lecciones aprendidas. No vale con resolver. Hay que documentar.
 
@@ -355,10 +373,33 @@ Cada vez que ejecutas un comando, cada vez que algo falla, cada vez que entiende
 
 Materiales de referencia para complementar cada fase del camino. Gratuitos o con versión gratuita suficiente para empezar.
 
+**Programación general:**
 - **[MoureDev — Cursos](https://moure.dev/cursos)** — Brais Moure. Cursos de programación en español de altísima calidad. Python, Kotlin, Git y más. El referente en castellano.
 - **[W3Schools](https://www.w3schools.com)** — Referencia rápida para HTML, CSS, JavaScript, PHP, Python y SQL. Ideal para consultar sintaxis mientras programas.
-- **[Harvard CS50P — Introduction to Programming with Python](https://pll.harvard.edu/course/cs50s-introduction-programming-python)** — El curso introductorio de Python de Harvard. Gratuito, riguroso y con certificado. Complemento perfecto para la Fase 2.
 - **[Luis Llamas — Cursos](https://www.luisllamas.es/cursos/)** — Electrónica, programación, IoT y automatización. Muy útil para entender cómo el software interactúa con el hardware.
+
+**Python:**
+- **[Harvard CS50P — Introduction to Programming with Python](https://pll.harvard.edu/course/cs50s-introduction-programming-python)** — El curso introductorio de Python de Harvard. Gratuito, riguroso y con certificado.
+
+**C/C++:**
+- **[cplusplus.com](https://cplusplus.com)** — Referencia completa del lenguaje con ejemplos.
+- **[cppreference.com](https://cppreference.com)** — La referencia técnica definitiva de C y C++.
+- **[Microsoft Learn — C++](https://learn.microsoft.com/es-es/cpp/cpp/)** — Documentación oficial de Microsoft, muy bien estructurada.
+- **[Cisco NetAcad — C++ Advanced](https://www.netacad.com/es/courses/c-plus-plus-advanced?courseLang=en-US)** — Curso estructurado gratuito.
+
+**Kotlin + Android:**
+- **[Android Developers — Guía oficial](https://developer.android.com/guide)** — Documentación oficial de Google para desarrollo Android.
+- **[Kotlin — Documentación oficial](https://kotlinlang.org/docs/home.html)** — Referencia completa del lenguaje por JetBrains.
+- **[Android Basics with Compose](https://developer.android.com/courses/android-basics-compose/course)** — Curso gratuito oficial de Google para aprender Android desde cero.
+
+**JavaScript / Web:**
+- **[MDN Web Docs](https://developer.mozilla.org/es/)** — La biblia de JavaScript, HTML y CSS. Mozilla. Gratuito y en español.
+
+**Docker:**
+- **[Docker Docs](https://docs.docker.com)** — Documentación oficial con tutoriales de inicio muy accesibles.
+
+**Linux + Bash:**
+- **[OverTheWire — Bandit](https://overthewire.org/wargames/bandit/)** — Wargame gratuito para aprender Linux y bash resolviendo retos. Complemento perfecto para la Fase 1.
 
 ---
 
