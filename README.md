@@ -100,6 +100,7 @@ Cada vez que ejecutas un comando, cada vez que algo falla, cada vez que entiende
 |---|---|
 | [Obsidian](https://obsidian.md) | La más potente — notas enlazadas, grafos de conocimiento, plugins, todo local |
 | [Joplin](https://joplinapp.org) | Open source, sincronización con la nube, buena para empezar |
+| [Notion](https://www.notion.com/) | Herramienta en la nube, muy flexible, basada en bloques y bases de datos |
 | [VS Code](https://code.visualstudio.com) | Preview de Markdown integrado — si ya lo tienes abierto para el código, úsalo también para las notas |
 
 > El flujo es simple: tienes Obsidian o Joplin abierto al lado del editor mientras trabajas. Cada paso que das, cada error que encuentras, cada solución que descubres — lo escribes en ese momento. Cuando acabas la práctica, el informe ya está casi hecho.
@@ -159,6 +160,7 @@ Cada vez que ejecutas un comando, cada vez que algo falla, cada vez que entiende
 - Redes — `ifconfig`, `ip`, `netstat`, `ping`, `curl`, `wget`
 - Pipes y redirección — `|`, `>`, `>>`, `grep`, `awk`, `sed`
 - Gestión de paquetes — `apt`, `dpkg`
+- Edición de archivos — práctica obligatoria con `vi` o `nano` (crear, editar, guardar y modificar archivos de configuración desde terminal)
 
 **Scripts propuestos:**
 
@@ -186,6 +188,7 @@ Cada vez que ejecutas un comando, cada vez que algo falla, cada vez que entiende
 | Consumir APIs | GET/POST, JSON, autenticación con API key |
 | Telegram Bot | Bot real con BotFather y python-telegram-bot |
 | Ollama + FastAPI | Modelo de IA local expuesto como endpoint REST propio |
+| Postman | Cliente para probar APIs (GET/POST), ver respuestas, colecciones y automatizar tests |
 
 **Proyecto final:** Bot de Telegram que consulta una API propia montada con FastAPI y un modelo local con Ollama.
 
